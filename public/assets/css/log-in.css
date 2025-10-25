@@ -1,0 +1,115 @@
+#main{
+    background: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)),url(../img/cta-bg.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    position: relative;
+    background: whitesmoke;
+    opacity: 0.8;
+    border-radius: 50px 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 30px;
+    margin-top: 115px;
+    margin-bottom: 114px;
+}
+.box forms{
+    position: absolute;
+    inset: 2px;
+    border-radius: 50px 5px;
+    z-index: 10;
+    padding: 30px 30px;
+    display: flex;
+    flex-direction: column;
+}
+.box form h2{
+    color: #37517e;
+    margin-top: 20px;
+    font-size: 35px;
+    font-weight: 500;
+    text-align: center;
+}
+.box form .inputBox{
+    position: relative;
+    width: 350px;
+    margin-top: 35px;
+}
+.box form .inputBox input{
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    color: white;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    z-index: 10;
+}
+.box form .inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 20px 10px 10px;
+    font-size: 1em;
+    color: #8f8f8f;
+    pointer-events: none;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+.box form .inputBox input:valid ~ span,
+.box form .inputBox input:focus ~ span{
+    color: #37517e;
+    transform: translateX(-10px) translateY(-30px);
+    font-size: 0.75em;
+}
+.box form .inputBox i{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #37517e;
+    border-radius: 4px;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 9;
+}
+.box form .inputBox input:valid ~ i,
+.box form .inputBox input:focus ~ i{
+    height: 44px;
+}
+.box form .links{
+    display: flex;
+    justify-content: right;
+}
+.box form .links a{
+    margin: 25px 0;
+    font-size: 1em;
+    color: #8f8f8f;
+    text-decoration: none;
+}
+.box form .links a:hover,
+.box form .links a:nth-child(2){
+    color: #37517e;
+}
+.box form input[type="submit"]{
+    font-size: 20px;
+    color: white;
+    border: none;
+    outline: none;
+    background: #37517e;
+    padding: 5px;
+    margin-top: 40px;
+    border-radius: 90px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    height: 50px;
+}
+.box form input[type="submit"]:active{
+    background: linear-gradient(90deg, #45f3ff, #d9138a);
+    opacity: 0.8;
+}

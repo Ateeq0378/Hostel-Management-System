@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Http\Middleware;
+
+use Closure;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\Response;
+
+class ValidRole
+{
+    public function handle(Request $request, Closure $next): Response
+    {   
+        if(Auth::check() && in_array(Auth::user()->role, ['provost', 'warden'])){
+            return $next($request);
+        }
+        else{
+            Auth::logout();
+            return redirect()->route('login-page')->withErrors(['status' => 'Unauthorized access.']);
+        }
+    }
+}
