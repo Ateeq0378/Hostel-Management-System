@@ -58,7 +58,7 @@ class StudentController extends Controller
         if($student){
 
             Mail::to($toemail)->send(new StudentRegistration(
-                'Registration',
+                'Student Registration',
                 $student->name,
                 $student->enroll_number,
                 $student->email,
