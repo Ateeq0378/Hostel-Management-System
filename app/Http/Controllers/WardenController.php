@@ -51,7 +51,7 @@ class WardenController extends Controller{
         if($warden){
 
             Mail::to($toemail)->send(new WardenRegistration(
-                'Warden Account Created',
+                'Warden Registration',
                 $warden->name,
                 $warden->email,
                 $password
