@@ -3,53 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><title>Welcome to Homeify</title></title>
-
+    <title>Welcome to Homeify</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
             color: #333;
-            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .email-container {
+            max-width: 600px;
+            background-color: #ffffff;
+            margin: 40px auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .email-header {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
             padding: 20px;
         }
-        .container {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 5px rgba(0,0,0,0.1);
-            max-width: 600px;
-            margin: auto;
+        .email-body {
+            padding: 30px;
+        }
+        .email-body h2 {
+            color: #007bff;
+        }
+        .info {
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+        .info strong {
+            color: #333;
+        }
+        .password-box {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
+            letter-spacing: 1px;
         }
         .footer {
-            margin-top: 30px;
-            font-size: 0.9em;
-            color: #777;
+            background-color: #f9f9f9;
+            text-align: center;
+            color: #888;
+            font-size: 12px;
+            padding: 15px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>{{ $subject }}</h2>
 
-        <p>Dear {{ $name }},</p>
+    <div class="email-container">
+        <div class="email-header">
+            <h1>{{ $subject }}</h1>
+        </div>
+        <div class="email-body">
+            <h2>Hello, {{ $name }}</h2>
+            <p>Welcome to the Homeify. Your registration has been completed successfully.</p>
 
-        <p>Welcome to the Homeify. Your registration has been completed successfully.</p>
+            <div class="info">
+                <p><strong>Student Name:</strong> {{ $name }}</p>
+                <p><strong>Enrollment Number:</strong> {{ $enroll_number }}</p>
+                <p><strong>Email:</strong> {{ $email }}</p>
+                <p><strong>Temporary Password:</strong></p>
+                <div class="password-box">{{ $password }}</div>
+            </div>
 
-        <ul>
-            <li><strong>Student Name:</strong> {{ $name }}</li>
-            <li><strong>Enrollment Number:</strong> {{ $enroll_number }}</li>
-            <li><strong>Gmail Id:</strong> {{ $email }}</li>
-            <li><strong>Password:</strong> {{ $password }}</li>
-        </ul>
+            <p>
+                Please use this temporary password to log in, and be sure to change it after logging in for your account's security.
+            </p>
 
-        <p>Regards,<br>
-        Hostel Administration</p>
-
+            <p>Best Regards,<br>Hostel Administration</p>
+        </div>
         <div class="footer">
             <p>This is an automated message. Please do not reply to this email.</p>
         </div>
     </div>
+
 </body>
 </html>
