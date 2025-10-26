@@ -24,8 +24,13 @@ Route::get('/', function () {
 Route::view('/login-page','login')->name('login-page')->middleware(CheckLoggedIn::class);
 Route::post('/login',[UserController::class, 'login'])->name('login');
 Route::get('/logout',[UserController::class, 'logout'])->name('logout');
-Route::get('/change-password/{user_email}',[UserController::class, 'changePassword'])->name('change-password')->middleware(ValidUser::class);
-Route::post('/update-password',[UserController::class, 'updatePassword'])->name('update-password')->middleware(ValidUser::class);
+
+Route::middleware([ValidUser::class])->group(function(){
+    Route::post('/update-password',[UserController::class, 'updatePassword'])->name('update-password');
+    Route::get('/change-password/{user_email}',[UserController::class, 'changePassword'])->name('change-password');
+    Route::get('/forgot-password/{user_email}',[UserController::class, 'forgotPassword'])->name('forgot-password');
+    Route::get('/show-dahboard/{user_email}',[UserController::class, 'showDashboard'])->name('show-dashboard');
+});
 
 Route::middleware([ValidUser::class, ValidRole::class])->group(function(){
 
