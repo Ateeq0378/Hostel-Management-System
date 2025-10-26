@@ -35,7 +35,7 @@
         <header id="header" class="header-inner-pages">
             <div class="container d-flex align-items-center">
                 <img src="{{ asset('/assets/img/image.png') }}" alt="" width="75px">
-                <h1 class="logo me-auto"><a href="{{ route('change-password', Auth::user()->email) }}">Homeify</a></h1>
+                <h1 class="logo me-auto"><a href="{{ route('show-dashboard', Auth::user()->email) }}">Homeify</a></h1>
             </div>
         </header>
         
@@ -84,7 +84,8 @@
                     </div>
 
                     {{-- Submit --}}
-                    <button type="submit" class="btn btn-primary">Change</button>
+                    <button type="submit" class="btn btn-primary">Change Password</button>
+                    <a href="{{ route('show-dashboard', Auth::user()->email) }}" class="btn btn-danger">Cancle</a>
                     @error('status')
                         <div class="text-danger mt-3">{{ $message }}</div>
                     @enderror
