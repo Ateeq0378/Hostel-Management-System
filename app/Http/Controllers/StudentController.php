@@ -53,7 +53,7 @@ class StudentController extends Controller
             'role' => 'student'
         ]);
 
-        $toemail = "ateeq0378@gmail.com";
+        $toemail = $student->email;
 
         if($student){
 
