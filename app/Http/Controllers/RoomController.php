@@ -89,7 +89,7 @@ class RoomController extends Controller
         $room->save();
         $student->save();
 
-        $toemail = "ateeq0378@gmail.com";
+        $toemail = $student->email;
 
         if($room && $student){
 
@@ -157,7 +157,7 @@ class RoomController extends Controller
         $room->save();
         $student->save();
 
-        $toemail = "ateeq0378@gmail.com";
+        $toemail = $student->email;
 
         if($room && $student && $history){
 
