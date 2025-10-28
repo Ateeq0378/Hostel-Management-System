@@ -10,7 +10,7 @@
         <meta content="" name="keywords">
 
         <!-- Favicons -->
-        <link href="{{ asset('/assets/img/image.png') }}" rel="icon">
+        <link href="assets/img/image.png" rel="icon">
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -23,8 +23,8 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
         <!-- CSS File -->
-        <link href="{{ asset('/assets/css/main.css') }}" rel="stylesheet">
-        <link href="{{ asset('/assets/css/log-in.css') }}" rel="stylesheet">
+        <link href="assets/css/main.css" rel="stylesheet">
+        <link href="assets/css/log-in.css" rel="stylesheet">
 
     </head>
 
