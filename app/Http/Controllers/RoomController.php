@@ -22,7 +22,7 @@ class RoomController extends Controller
 
         $students = Student::whereNotNull('room_number')->get();
 
-        return view('\admin\room', compact('students','total', 'vacant', 'occupied'));
+        return view('admin.room', compact('students','total', 'vacant', 'occupied'));
     }
 
     public function add(Request $request){
@@ -135,7 +135,7 @@ class RoomController extends Controller
         ]);
 
         $room = Room::find($request->allotedRoom);
-        $student = Student::where('enrolment_number', $request->enroll)->first();
+        $student = Student::where('enroll_number', $request->enroll)->first();
 
         $history = History::create([
             'enroll_number' => $student->enroll_number,
