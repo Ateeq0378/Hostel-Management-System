@@ -7,10 +7,10 @@
     <title>@yield('title')</title>
 
     <!-- Favicons -->
-    <link href="{{ asset('/assets/img/image.png') }}" rel="icon">
+    <link href="assets/img/image.png" rel="icon">
 
     <!-- CSS File -->
-    <link href="{{ asset('/assets/css/style.css') }}" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -19,7 +19,7 @@
     <!-- JS File -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ asset('/assets/js/jQuery.js') }}" async></script>
+    <script src="assets/js/jQuery.js" async></script>
 </head>
 
 <body>
