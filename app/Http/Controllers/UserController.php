@@ -32,6 +32,7 @@ class UserController extends Controller
             'password' => 'required',
             'role' => 'required'
         ]);
+
         
         if(Auth::attempt($credentials)){
 
@@ -98,31 +99,38 @@ class UserController extends Controller
 
     public function forgotPassword(Request $request){
 
+        $credentials = $request->validate([
+            'email' => 'required|email'
+        ]);
+
         $user = User::where('email', $request->email)->first();
-        $password = $this->generatePassword();
-        $user->password = $password;
-        $user->save();
-        $toemail = "ateeq0378@gmail.com";
 
-        Mail::to($toemail)->send(new forgotPassword(
-            'Forgot Password',
-            $user->name,
-            $user->email,
-            $password
-        ));
+        if($user->role != "provost"){
 
-        if($user->role == "provost" || $user->role == "warden"){
-            return redirect()->route('admin-dashboard')->with(['success' => 'A new password has been send to your email.']);
+            $password = $this->generatePassword();
+            $user->password = $password;
+            $user->save();
+            // $toemail = $user->email;
+            $toemail = "ateeq0378@gmail.com";
+
+            Mail::to($toemail)->send(new forgotPassword(
+                'Forgot Password',
+                $user->name,
+                $user->email,
+                $password
+            ));
+
+            return redirect()->route('login-page')->with(['success' => 'A new password has been send to your email.']);
         }
         else {
-            return redirect()->route('student-dashboard')->with(['success' => 'A new password has been send to your email.']);
+            return redirect()->route('login-page')->with(['error' => 'You can not forgot the Provost password.']);
         }
 
     }
 
-    public function showDashboard(Request $request){
+    public function showDashboard(string $user_email){
 
-        $user = User::where('email', $request->email)->first();
+        $user = User::where('email', $user_email)->first();
 
         if($user->role == "provost" || $user->role == "warden"){
             return view('admin.dashboard');
