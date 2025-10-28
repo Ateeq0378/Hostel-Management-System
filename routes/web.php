@@ -22,13 +22,14 @@ Route::get('/', function () {
 })->name('home-page');
 
 Route::view('/login-page','login')->name('login-page')->middleware(CheckLoggedIn::class);
+Route::view('forgot-password-page','forgot-password')->name('forgot-password-page')->middleware(CheckLoggedIn::class);
+Route::post('/forgot-password',[UserController::class, 'forgotPassword'])->name('forgot-password');
 Route::post('/login',[UserController::class, 'login'])->name('login');
 Route::get('/logout',[UserController::class, 'logout'])->name('logout');
 
 Route::middleware([ValidUser::class])->group(function(){
     Route::post('/update-password',[UserController::class, 'updatePassword'])->name('update-password');
     Route::get('/change-password/{user_email}',[UserController::class, 'changePassword'])->name('change-password');
-    Route::get('/forgot-password/{user_email}',[UserController::class, 'forgotPassword'])->name('forgot-password');
     Route::get('/show-dahboard/{user_email}',[UserController::class, 'showDashboard'])->name('show-dashboard');
 });
 
