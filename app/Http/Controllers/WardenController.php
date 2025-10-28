@@ -46,7 +46,7 @@ class WardenController extends Controller{
             'role' => 'warden'
         ]);
 
-        $toemail = "ateeq0378@gmail.com";
+        $toemail = $warden->email;
 
         if($warden){
 
