@@ -110,8 +110,7 @@ class UserController extends Controller
             $password = $this->generatePassword();
             $user->password = $password;
             $user->save();
-            // $toemail = $user->email;
-            $toemail = "ateeq0378@gmail.com";
+            $toemail = $user->email;
 
             Mail::to($toemail)->send(new forgotPassword(
                 'Forgot Password',
