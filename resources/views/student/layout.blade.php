@@ -156,9 +156,6 @@
                     <a href="{{ url('change-password', Auth::user()->email) }}" class="btn btn-danger" style="text-decoration: none">
                         Change Password
                     </a>
-                    <a href="{{ url('forgot-password', Auth::user()->email) }}" class="btn btn-danger" style="text-decoration: none">
-                        Forgot Password
-                    </a>
                 </div>
 
             </div>
