@@ -128,6 +128,9 @@
                 url:"{{ route('allotment') }}",
                 type:"GET",
                 data:{'enroll_number':enroll_number},
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                },
                 success: function(data){
                     if (data.student) {
                         $('#name').val(data.student.name);
@@ -136,6 +139,9 @@
                         $('#name').val('');
                         $('#allotedRoom').val('');
                     }
+                },
+                error: function(xhr) {
+                    console.error(xhr.responseText);
                 }
             });
         });
