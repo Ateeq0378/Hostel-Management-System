@@ -125,7 +125,7 @@
         $("#enroll_number").on('change', function(){
             var enroll_number = $(this).val();
             $.ajax({
-                url:"{{ route('public/allotment') }}",
+                url:"{{ route('allotment') }}",
                 type:"GET",
                 data:{'enroll_number':enroll_number},
                 headers: {
