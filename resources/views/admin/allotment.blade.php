@@ -119,6 +119,8 @@
 
 </div>
 
+<meta name="csrf-token" content="{{ csrf_token() }}">
+
 <script type="text/javascript">
 
     $(document).ready(function(){
@@ -129,7 +131,7 @@
                 type:"GET",
                 data:{'enroll_number':enroll_number},
                 headers: {
-                    'X-Requested-With': 'XMLHttpRequest'
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 success: function(data){
                     if (data.student) {
