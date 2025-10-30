@@ -105,7 +105,7 @@
                         </div>
                     </div>
                     <input type="submit" value="Login" name="submit">
-                    <a href="{{ url('forgot-password-page') }}">Forgot Password</a>
+                    <!-- <a href="{{ url('forgot-password-page') }}">Forgot Password</a> -->
                     <div class="container">
                         <span class="text-danger">
                             @error('status')
