@@ -36,7 +36,7 @@ Route::middleware([ValidUser::class])->group(function(){
 Route::middleware([ValidUser::class, ValidRole::class])->group(function(){
 
     Route::get('/dashboard', [UserController::class, 'admin'])->name('admin-dashboard');
-    Route::get('/warden',[WardenController::class, 'index'])->name('warden');
+    Route::get('/admin-warden',[WardenController::class, 'index'])->name('warden');
     Route::get('/add-warden',[WardenController::class, 'addWarden'])->name('add-warden');
     Route::post('/warden-create', [WardenController::class, 'create'])->name('warden-create');
     Route::get('/edit-warden/{warden_id}',[WardenController::class, 'edit'])->name('edit-warden');
