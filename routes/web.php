@@ -79,7 +79,7 @@ Route::middleware([ValidUser::class, ValidRole::class])->group(function(){
     Route::post('/resolved-complain/{complain_id}',[ComplainController::class, 'resolvedComplain'])->name('resolved-complain');
 
     Route::get('/history',[HistoryController::class, 'history'])->name('history');
-    Route::get('/show-history/{student_id}/{history_id}',[HistoryController::class, 'show'])->name('show-history');
+    Route::get('/show-history/{history_id}/{student_id}',[HistoryController::class, 'show'])->name('show-history');
 
 });
 
