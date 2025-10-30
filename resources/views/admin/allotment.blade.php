@@ -53,7 +53,14 @@
                         </span>
                     </div>
                     <div class="col-3">
-                        <input type="text" class="form-control" id="name" name="name" readonly="readonly" placeholder="Student Name">
+                        <select class="form-control" id="name" name="name">
+                            <option value="">Select Name</option>
+                            @forelse ($students as $student)
+                                <option value="{{$student->name}}">{{$student->name}}</option>
+                            @empty
+                                <option value="">No Record Found!</option>
+                            @endforelse
+                        </select>
                         <span class="text-danger">
                             @error('name')
                                 {{ $message }}
@@ -121,7 +128,7 @@
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 
     $(document).ready(function(){
         $("#enroll_number").on('change', function(){
@@ -149,6 +156,6 @@
         });
     });
 
-</script>
+</script> -->
 
 @endsection
