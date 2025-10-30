@@ -44,7 +44,8 @@ class StudentController extends Controller
         ]);
 
         $student = Student::create($data);
-        $password = $this->generatePassword();
+        // $password = $this->generatePassword();
+        $password = $request->number;
 
         User::create([
             'name' => $student->name,
