@@ -21,10 +21,10 @@ class HistoryController extends Controller
         return view('admin.history', compact('histories', 'total', 'vacant', 'occupied'));
     }
 
-    public function show(string $student_id, string $history_id){
+    public function show(string $history_id, string $student_id){
 
         $history = History::find($history_id);
-        $student = Student::where('enrolment_number', $student_id)->first();
+        $student = Student::where('enroll_number', $student_id)->first();
         return view('admin.show-history', compact('student', 'history'));
     }
 }
