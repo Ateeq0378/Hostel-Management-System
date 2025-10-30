@@ -70,7 +70,7 @@
                             <option value="">Select Log In Type</option>
                             <option value="student">Student</option>
                             <option value="warden">Warden</option>
-                            <option value="provost">Provost</option>
+                            <option value="provost">Admin</option>
                         </select>
                         <div class="container">
                             <span class="text-danger">
