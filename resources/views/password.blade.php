@@ -23,8 +23,10 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
         <!-- CSS File -->
-        <link href="assets/css/main.css" rel="stylesheet">
-        <link href="assets/css/log-in.css" rel="stylesheet">
+        <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/log-in.css') }}" rel="stylesheet">
+        <!-- <link href="assets/css/main.css" rel="stylesheet">
+        <link href="assets/css/log-in.css" rel="stylesheet"> -->
 
     </head>
 
