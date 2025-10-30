@@ -131,11 +131,11 @@ class RoomController extends Controller
         $request->validate([
             'enroll_number' => 'required|string',
             'name' => 'required|string',
-            'room' => 'required|digits:1',
+            'room_number' => 'required|digits:1',
         ]);
 
-        $room = Room::find($request->allotedRoom);
-        $student = Student::where('enroll_number', $request->enroll)->first();
+        $room = Room::find($request->room_number);
+        $student = Student::where('enroll_number', $request->enroll_number)->first();
 
         $history = History::create([
             'enroll_number' => $student->enroll_number,
