@@ -53,11 +53,11 @@ class RoomController extends Controller
 
     public function getStudentsForAllotment(Request $request){   
 
-        if ($request->ajax()) {
+        // if ($request->ajax()) {
 
-            $student = Student::where('enroll_number', $request->enroll_number)->first();
-            return response()->json(['student' => $student]);
-        }
+        //     $student = Student::where('enroll_number', $request->enroll_number)->first();
+        //     return response()->json(['student' => $student]);
+        // }
 
         $total = Room::count();
         $bed = Room::sum('capacity');
@@ -111,11 +111,11 @@ class RoomController extends Controller
 
     public function getStudentsForCancelation(Request $request){
 
-        if ($request->ajax()) {
+        // if ($request->ajax()) {
 
-            $student = Student::where('enroll_number', $request->enroll_number)->first();
-            return response()->json(['student' => $student]);
-        }
+        //     $student = Student::where('enroll_number', $request->enroll_number)->first();
+        //     return response()->json(['student' => $student]);
+        // }
 
         $total = Room::count();
         $bed = Room::sum('capacity');
