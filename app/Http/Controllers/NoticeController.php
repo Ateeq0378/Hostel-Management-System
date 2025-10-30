@@ -23,14 +23,19 @@ class NoticeController extends Controller
     
     public function create(Request $request){
 
-        $data = $request->validate([
+        $request->validate([
             'role' => 'required|string',
             'email' => 'required|email',
             'title' => 'required|string',
             'description' => 'required|string',
         ]);
-
-        $notice = Notice::create($data);
+        
+        $notice = Notice::create([
+            'role' => $request->role,
+            'email' => $request->email,
+            'title' => $request->title,
+            'description' => $request->description,
+        ]);
         
         if($notice){
             return redirect()->route('admin-notice')->with(['success' => 'Notice Added Successfully']);
