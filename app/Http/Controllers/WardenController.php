@@ -38,7 +38,7 @@ class WardenController extends Controller{
 
         $warden = Warden::create($data);
         // $password = $this->generatePassword();
-        password = $request->number;
+        $password = $request->number;
 
         User::create([
             'name' => $warden->name,
