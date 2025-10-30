@@ -134,7 +134,7 @@
             $.ajax({
                 url:"{{ route('cancelation') }}",
                 type:"GET",
-                data:{'enroll_number':enroll_number},
+                data:{'enroll_number':enroll_number},x
                 success: function(data){
                     if (data.student) {
                         $('#name').val(data.student.name);
