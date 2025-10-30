@@ -53,17 +53,31 @@
                         </span>
                     </div>
                     <div class="col-3">
-                        <input type="text" class="form-control" id="name" name="name" readonly="readonly" placeholder="Student Name">
+                        <select class="form-control" id="name" name="name">
+                            <option value="">Select Name</option>
+                            @forelse ($students as $student)
+                                <option value="{{$student->name}}">{{$student->name}}</option>
+                            @empty
+                                <option value="">No Record Found!</option>
+                            @endforelse
+                        </select>
                         <span class="text-danger">
                             @error('name')
                                 {{ $message }}
                             @enderror
                         </span>
                     </div>
-                    <div class="col-2">
-                        <input type="text" class="form-control" id="allotedRoom" name="allotedRoom" readonly="readonly" placeholder="Room Number">
+                    <div class="col-3">
+                        <select class="form-control" id="room_number" name="room_number">
+                            <option value="">Select Room Number</option>
+                            @forelse ($students as $student)
+                                <option value="{{$student->room_number}}">{{$student->room_number}}</option>
+                            @empty
+                                <option value="">No Record Found!</option>
+                            @endforelse
+                        </select>
                         <span class="text-danger">
-                            @error('room')
+                            @error('room_number')
                                 {{ $message }}
                             @enderror
                         </span>
@@ -112,7 +126,7 @@
 
 </div>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 
     $(document).ready(function(){
         $("#enroll_number").on('change', function(){
@@ -135,6 +149,6 @@
         });
     });
 
-</script>
+</script> -->
 
 @endsection
