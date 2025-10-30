@@ -35,8 +35,6 @@ class NoticeController extends Controller
             'email' => $request->email,
             'title' => $request->title,
             'description' => $request->description,
-            'created_at' => date('Y-m-d'),
-            'updated_at' => date('Y-m-d'),
         ]);
         
         if($notice){
