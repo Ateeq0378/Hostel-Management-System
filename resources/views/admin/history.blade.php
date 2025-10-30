@@ -59,7 +59,7 @@
                             <td>{{$history->allotment_date}}</td>
                             <td>{{$history->cancelation_date}}</td>
                             <td>
-                                <a href="{{ route('show-history', [$history->enroll_number, $history->id]) }}" class="btn btn-success">
+                                <a href="{{ route('show-history', [$history->id, $history->enroll_number]) }}" class="btn btn-success">
                                     <i class="fa-solid fa-eye"></i>
                                 </a>
                             </td>
